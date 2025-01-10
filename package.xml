@@ -3,10 +3,19 @@
 <package format="3">
   <name>Bulnabi_DBF2025_CustomSim_v1</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="tykim@todo.todo">tykim</maintainer>
+  <description>Package for Gazebo-based simulation of a glider with ROS 2 and Arduino integration</description>
+  <maintainer email="tykim512@snu.ac.kr">tykim</maintainer>
   <license>TODO: License declaration</license>
 
+  <!-- ROS 2 Core Dependencies -->
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>gazebo_ros</depend>
+  <depend>tf2_ros</depend>
+
+  <!-- Testing Dependencies -->
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
