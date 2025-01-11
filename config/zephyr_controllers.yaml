@@ -1,0 +1,20 @@
+# controller_manager:
+#   ros__parameters:
+#     update_rate: 100
+#     joint_state_controller:
+#       type: joint_state_controller/JointStateController
+#       publish_rate: 50
+#     velocity_controllers:
+#       type: velocity_controllers/JointGroupVelocityController
+#       joints:
+#         - propeller_joint
+
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  state: active
+
+velocity_controllers:
+  type: velocity_controllers/JointGroupVelocityController
+  joints:
+    - propeller_joint
+  state: active

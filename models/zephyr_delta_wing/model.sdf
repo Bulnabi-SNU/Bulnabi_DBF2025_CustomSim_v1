@@ -19,7 +19,8 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
+            <!-- <uri>model://zephyr_delta_wing/meshes/wing.dae</uri> -->
+            <uri>file:///home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae</uri>
             <submesh>
               <name>Wing</name>
               <center>true</center>
@@ -30,7 +31,8 @@
       <collision name="body_collision">
         <geometry>
           <mesh>
-            <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
+            <!-- <uri>model://zephyr_delta_wing/meshes/wing.dae</uri> -->
+            <uri>file:///home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae</uri>
             <submesh>
               <name>Wing</name>
               <center>true</center>
@@ -145,6 +147,12 @@
       </sensor>
     </link>
 
+    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+      <robotNamespace>/zephyr_delta_wing</robotNamespace>
+      <control_period>0.01</control_period>
+      <robotParam>robot_description</robotParam> <!-- URDF 매핑 -->
+    </plugin>
+
     <link name="propeller">
       <!--<pose>0 0.1174 -0.007 0 1.5707 0</pose>-->
       <pose>0 0.07 0.008 0 1.5707 0</pose>
@@ -162,7 +170,8 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
+            <!-- <uri>model://zephyr_delta_wing/meshes/wing.dae</uri> -->
+            <uri>file:///home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae</uri>
             <submesh>
               <name>Propeller</name>
               <center>true</center>
@@ -223,7 +232,8 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
+            <!-- <uri>model://zephyr_delta_wing/meshes/wing.dae</uri> -->
+            <uri>file:///home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae</uri>
             <submesh>
               <name>Flap_Left</name>
               <center>true</center>
@@ -258,7 +268,8 @@
       <visual name="visual">
         <geometry>
           <mesh>
-            <uri>model://zephyr_delta_wing/meshes/wing.dae</uri>
+            <!-- <uri>model://zephyr_delta_wing/meshes/wing.dae</uri> -->
+            <uri>file:///home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae</uri>
             <submesh>
               <name>Flap_Right</name>
               <center>true</center>

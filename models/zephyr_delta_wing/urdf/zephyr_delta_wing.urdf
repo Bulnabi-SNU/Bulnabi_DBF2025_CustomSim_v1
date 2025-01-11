@@ -1,0 +1,54 @@
+<robot name="zephyr_delta_wing">
+  <!-- 링크 정의 -->
+  <link name="wing">
+    <inertial>
+      <mass value="1.5"/>
+      <inertia ixx="0.083137104" ixy="0" ixz="0" iyy="0.387382402" iyz="0" izz="0.469845106"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <!-- <mesh filename="package://your_package/meshes/wing.dae"/> -->
+        <!-- <mesh filename="file:///home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae"/> -->
+        <!-- <mesh filename="/home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae"/> -->
+        <mesh filename="../meshes/wing.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <!-- <mesh filename="package://your_package/meshes/wing.dae"/> -->
+        <!-- <mesh filename="file:///home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae"/> -->
+        <!-- <mesh filename="/home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae"/> -->
+        <mesh filename="../meshes/wing.dae"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="propeller">
+    <inertial>
+      <mass value="0.05"/>
+      <inertia ixx="0.000367571" ixy="0" ixz="0" iyy="0.00036985" iyz="0" izz="0.000003187"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <!-- <mesh filename="package://your_package/meshes/wing.dae"/> -->
+        <!-- <mesh filename="file:///home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae"/> -->
+        <!-- <mesh filename="/home/tykim/ros2_ws/src/Bulnabi_DBF2025_CustomSim_v1/models/zephyr_delta_wing/meshes/wing.dae"/> -->
+        <mesh filename="../meshes/wing.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02561 0.00541 0.14841"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- 조인트 정의 -->
+  <joint name="propeller_joint" type="revolute">
+    <parent link="wing"/>
+    <child link="propeller"/>
+    <axis xyz="0 -1 0"/>
+    <dynamics damping="0.002"/>
+    <limit lower="-3.14159" upper="3.14159" effort="10" velocity="1.0"/>
+  </joint>
+</robot>
